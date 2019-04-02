@@ -20,7 +20,7 @@ repositories {
 apply plugin: 'com.android.library'
 
 project.ext.publishingGroupId = 'com.bandlab.circleprogress'
-project.ext.publishingVersion = '1.0.1'
+project.ext.publishingVersion = CIRCLE_VIEW_VERSION
 apply from: 'artifactory.gradle'
 
 android {
