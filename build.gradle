@@ -1,9 +1,10 @@
 buildscript {
     repositories {
+        google()
         jcenter()
     }
     dependencies {
-        classpath 'com.android.tools.build:gradle:2.1.2'
+        classpath "com.android.tools.build:gradle:$ANDROID_GRADLE_PLUGIN_VERSION"
     }
 }
 
@@ -12,6 +13,7 @@ plugins {
 }
 
 repositories {
+    google()
     jcenter()
 }
 
@@ -22,11 +24,11 @@ project.ext.publishingVersion = '1.0.1'
 apply from: 'artifactory.gradle'
 
 android {
-    compileSdkVersion 24
-    buildToolsVersion '24.0.0'
+    compileSdkVersion Integer.parseInt(ANDROID_SDK_VERSION)
+    buildToolsVersion ANDROID_BUILD_TOOLS_VERSION
 
     defaultConfig {
-        minSdkVersion 9
+        minSdkVersion Integer.parseInt(MIN_ANDROID_SDK_VERSION)
         versionName project.ext.publishingVersion
     }
 
@@ -37,5 +39,5 @@ android {
 }
 
 dependencies {
-    compile "com.android.support:support-annotations:24.0.0"
+    implementation "com.android.support:support-annotations:$ANDROID_SUPPORT_LIBRARY_VERSION"
 }
