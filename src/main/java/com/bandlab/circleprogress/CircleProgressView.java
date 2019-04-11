@@ -108,4 +108,12 @@ public class CircleProgressView extends View {
         isInfiniteProgress = false;
         postInvalidateOnAnimation();
     }
+
+    public void setDonutParams(int donutRadius, int donutColor) {
+        circleProgress.setDonutParams(donutRadius, donutColor);
+    }
+
+    public void setShowRestProgress(boolean isShow) {
+        circleProgress.setShowRestProgress(isShow);
+    }
 }
